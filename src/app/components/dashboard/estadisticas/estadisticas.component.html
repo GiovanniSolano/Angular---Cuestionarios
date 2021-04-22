@@ -1,0 +1,58 @@
+<div *ngIf="loading" class="d-flex justify-content-center mt-3">
+    <app-spinner></app-spinner>
+</div>
+
+<div class="container" *ngIf="!loading">
+
+    <div class="d-flex justify-content-center mt-3">
+        <div class="card card-titulo">
+            <div class="card-body">
+                <h2 class="titulo">LISTADO DE RESPUESTAS</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3" *ngIf="listRespuestasUsuario.length !== 0">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Participantes</th>
+                                <th>Fecha</th>
+                                <th>Puntos</th>
+                                <th style="width: 20%;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let respuestas of listRespuestasUsuario">
+                                <td>{{respuestas.nombreParticipante}}</td>
+                                <td>{{respuestas.fecha.toDate() | date:'dd/MM/yyyy'}}</td>
+                                <td>{{respuestas.puntosTotales}}</td>
+                                <td>
+                                    <i class="fas fa-search" [routerLink]="['/dashboard/respuesta-usuario-admin', respuestas.id]"></i>
+                                    <i class="fas fa-trash" (click)="eliminarRespuestaUsuario(respuestas.id)"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3" *ngIf="listRespuestasUsuario.length == 0">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5>NO HAY RESPUESTAS PARA MOSTRAR</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <button class="btn-principal mt-3 mb-3" style="width: 100%;" routerLink="/dashboard">VOLVER</button>
+        </div>
+    </div>
+</div>

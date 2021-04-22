@@ -1,0 +1,17 @@
+<div *ngIf="loading" class="contenedor">
+    <app-spinner></app-spinner>
+</div>
+<div class="contenedor" *ngIf="!loading">
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        {{errorText}}
+    </div>
+    <input [(ngModel)]="pin" type="text" class="form-control input-ingresar mb-3" placeholder="PIN del juego">
+    <button (click)="ingresar()" class="btn-ingresar btn-principal">Ingresar</button>
+</div>
+
+<div class="float-bottom">
+    <p class="text-center text-white">
+        Crea tu propio cuestionario GRATIS
+        <a class="link" routerLink="/usuario">aquí</a>
+    </p>
+</div>

@@ -1,0 +1,14 @@
+.badge {
+    font-size: 1rem;
+}
+
+.list-group-item {
+    font-family: 'Orelega One', cursive;
+    font-size: 16px;
+    color: black;
+}
+
+.classCorrecta {
+    background-color: #131d2d;
+    color: white;
+}

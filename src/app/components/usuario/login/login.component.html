@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-center mt-5" *ngIf="loading">
+        <app-spinner></app-spinner>
+    </div>
+    <div class="row" *ngIf="!loading">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center titulo">Login</h2>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+                        <div class="mb-3">
+                            <input type="text" formControlName="correo" [class.is-invalid]="correoRequerido || correoValido" placeholder=" Correo " class="form-control form-control-lg ">
+                            <span class="form-text text-danger " *ngIf="correoRequerido">El correo es requerido</span>
+                            <span class="form-text text-danger " *ngIf="correoValido">El correo no es válido</span>
+                        </div>
+                        <div class="mb-3 ">
+                            <input type="password" formControlName="contrasenia" [class.is-invalid]="contraseniaRequerida" placeholder="Contraseña" class="form-control form-control-lg ">
+                            <span class="form-text text-danger " *ngIf="contraseniaRequerida">La contraseña es requerida</span>
+
+                        </div>
+                        <button class="btn btn-secondary btn-lg" routerLink="/" type="button">Volver</button>
+                        <button class="btn btn-primary btn-lg float-end " [disabled]="loginForm.invalid" type="submit ">Aceptar</button>
+                    </form>
+                    <br>
+                    <div class="text-center ">
+                        <a routerLink="/usuario/registrarse">Registrarse</a>
+                        <br>
+                        <a routerLink="/usuario/recuperar-password">Recuperar Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

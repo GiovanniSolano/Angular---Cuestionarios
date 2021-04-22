@@ -1,0 +1,57 @@
+.inputPregunta {
+    text-align: center;
+    font-family: 'Orelega One', cursive;
+    font-size: 2rem;
+}
+
+.fondo-item {
+    background-color: #131d2d;
+    border-radius: 20px;
+    height: 160px;
+}
+
+.tituloSegundosPuntos {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+    font-family: 'Orelega One', cursive;
+}
+
+.segPuntos {
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+}
+
+.sumaResta {
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: #273346;
+    padding: 7px;
+    border-radius: 15px;
+    margin-left: 3px;
+}
+
+.form-range {
+    padding: 0px 20px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background-color: white;
+    font-size: 1.5rem;
+}
+
+.inputRespuesta {
+    text-align: center;
+    font-family: 'Orelega One', cursive;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.far,
+.fas {
+    font-size: 24px;
+    cursor: pointer;
+}

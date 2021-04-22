@@ -1,0 +1,37 @@
+.contador-pregunta {
+    font-size: 5rem;
+}
+
+.list-group-item {
+    font-size: 20px;
+    font-family: 'Orelega One', cursive;
+    color: black;
+    cursor: pointer;
+}
+
+.classSeleccionada {
+    background-color: #131d2d;
+    color: white;
+}
+
+.btn-aceptar {
+    width: 100%;
+    font-size: 20px;
+}
+
+.btn-aceptar:hover {
+    color: white;
+}
+
+.btn-disabled {
+    background-color: rgb(65, 64, 64);
+    opacity: 0.5;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}

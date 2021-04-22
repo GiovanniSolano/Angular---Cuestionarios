@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-center mt-5" *ngIf="loading">
+        <app-spinner></app-spinner>
+    </div>
+    <div class="row" *ngIf="!loading">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center titulo">Registro Usuario</h2>
+                    <form [formGroup]="registroForm" (ngSubmit)="registro()" autocomplete="off">
+                        <div class="mb-3">
+                            <input type="text" formControlName="correo" [class.is-invalid]="correoRequerido || correoValido" placeholder=" Correo " class="form-control form-control-lg ">
+                            <span class="form-text text-danger " *ngIf="correoRequerido">El correo es requerido</span>
+                            <span class="form-text text-danger " *ngIf="correoValido">El correo no es válido</span>
+                        </div>
+                        <div class="mb-3 ">
+                            <input type="password" formControlName="contrasenia" [class.is-invalid]="contraseniaRequerida || contraseniaValida" placeholder="Contraseña" class="form-control form-control-lg ">
+                            <span class="form-text text-danger " *ngIf="contraseniaRequerida">La contraseña es requerida</span>
+                            <span class="form-text text-danger " *ngIf="contraseniaValida">Al menos 6 caracteres</span>
+
+
+                        </div>
+                        <div class="mb-3 ">
+                            <input type="password" formControlName="contrasenia2" placeholder="Repetir contraseña" class="form-control form-control-lg ">
+                            <span class="form-text text-danger " *ngIf="registroForm.hasError('notSame')">Las contraseñas son diferentes</span>
+
+                        </div>
+                        <button class="btn btn-secondary btn-lg" routerLink="/usuario" type="button">Volver</button>
+                        <button class="btn btn-primary btn-lg float-end " [disabled]="registroForm.invalid" type="submit ">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
